@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    	<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    	<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+	</head>
+	<body>
+		<div id="container"></div>
+		<script type="text/babel">
+			var HelloWorld=React.createClass({
+				render:function(){
+					var letterStyle={
+					padding:10,
+					margin:10,
+					backgroundColor:this.props.bgcolor,
+					color:"#333",
+					display:"inline-block",
+					fontSize:32,
+					textAlign:"center"
+				};
+				
+					return(
+						<div style={letterStyle}>
+							{this.props.name}
+						</div>
+					);
+				}
+			});
+			ReactDOM.render(
+				<div>
+					<HelloWorld bgcolor="#58B3ff" name="lucy"/>
+					<HelloWorld bgcolor="#ff605f" name="anna"/>
+					<HelloWorld bgcolor="#ffd52e" name="bob"/>
+					<HelloWorld bgcolor="#49dd8e" name="xiaoming"/>
+					<HelloWorld bgcolor="#ae99ff" name="gema"/>
+				</div>,
+				document.getElementById('container')
+			);
+		</script>
+	</body>
+</html>
